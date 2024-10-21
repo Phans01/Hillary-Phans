@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+    <h1>"Pimp My Shoes" Contest Entry Form</h1>
+    <label>
+        Want to trade in your old sneakers for a custom pair of Forcefields? Make a case for why your shoes have got to go and you may be one of ten lucky winners.
+        <br>
+    </label>
+        <p>Contest Entry Information</p>
+    <form action="file:///C:/submit-entry" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="phone">Telephone Number:</label>
+            <input type="tel" id="phone" name="phone"><br><br>
+            <label for="old-shoes">My shoes are SO old ...</label><br>
+            <textarea id="old-shoes" name="old-shoes" rows="4" cols="50"></textarea><br><br>
+        <h2>Design your custom Forcefields:</h2>
+        <fieldset>
+            
+            <legend>Custom Shoe Design</legend>
+            <fieldset>
+            <legend>Color (choose one):</legend>
+            <input type="radio" id="red" name="color" value="red">
+            <label for="red">Red</label><br>
+            <input type="radio" id="blue" name="color" value="blue">
+            <label for="blue">Blue</label><br>
+            <input type="radio" id="black" name="color" value="black">
+            <label for="black">Black</label><br>
+            <input type="radio" id="silver" name="color" value="silver">
+            <label for="silver">Silver</label><br><br>
+            </fieldset>
+            <fieldset>
+            <legend>Features (<i>Choose as many as you want</i>):</legend>
+            <input type="checkbox" id="sparkley-laces" name="features" value="sparkley-laces">
+            <label for="sparkley-laces">Sparkley laces</label><br>
+            <input type="checkbox" id="metallic-logo" name="features" value="metallic-logo">
+            <label for="metallic-logo">Metallic logo</label><br>
+            <input type="checkbox" id="light-up-heels" name="features" value="light-up-heels">
+            <label for="light-up-heels">Light-up heels</label><br>
+            <input type="checkbox" id="mp3-enabled" name="features" value="mp3-enabled">
+            <label for="mp3-enabled">MP3-enabled</label><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Size</legend>
+            <label for="size">Sizes reflect standard men's sizes:</label>
+            <input type="number" id="size" name="size" min="1" max="15"><br><br>
+            </fieldset>
+        </fieldset>
+        <input type="submit" value="Pimp My Shoes!">
+        <input type="reset" value="Reset">
+    </form>
+
+
+</body></html>
