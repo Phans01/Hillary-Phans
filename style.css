@@ -1,0 +1,86 @@
+body{ 
+    background-color: #f9f7fe; 
+    } 
+    a{ 
+    color: rgb(123, 3, 123); 
+    } 
+    header{ 
+    padding: 0 0 10px 0; 
+    border-top: 5px solid rgb(175, 172, 172); 
+    text-align: center; 
+    text-decoration: underline; 
+    } 
+    h3{ 
+    padding: 40px 0 0 0; 
+    border-top: 5px solid rgb(175, 172, 172); 
+    font-size: 30px; 
+    line-height: 30px; 
+    text-transform:capitalize ;   
+    } 
+    .weather-app{ 
+    background-color: rgb(175, 172, 172); 
+    max-width: 600px; 
+    margin: 100px auto; 
+    padding: 30px; 
+    border-radius: 30px; 
+    } 
+    h2{ 
+    color: rgb(81, 49, 10); 
+    } 
+    .weather-app-temperature-container{ 
+    display: flex; 
+    padding: 40px 0 0 0;  
+    border-top: 30px solid rgb(175, 172, 172); 
+    line-height: 30px; 
+    text-transform: capitalize; 
+    } 
+    .weather-data{ 
+    display: flex;  
+    justify-content: space-between; 
+    } 
+    .weather-app-icon { 
+    height: 80px; 
+    width: 80px; 
+    line-height: 20px; 
+    padding-bottom: 10px; 
+    margin-top: 3px; 
+    } 
+    .weather-app-temperature { 
+    font-size: 80px; 
+    margin-left: 10px; 
+    font-weight: bold; 
+    } 
+    .weatehr-app-unit { 
+    margin-top: 16px; 
+    font-size: 28px; 
+    } 
+    .Humidity{ 
+    color: rgb(123, 3, 123); 
+    font-weight: bold; 
+    } 
+    .form-input{ 
+    text-decoration: solid; 
+    border: none; 
+    width: 70%; 
+    border-color: blueviolet; 
+    border-radius: 5px; 
+    font-size: 20px; 
+    padding: 10px 15px; 
+    } 
+    .form-button{ 
+    border: none;  
+    background-color: rgb(123, 3, 123); 
+    color: whitesmoke; 
+    padding: 10px 15px; 
+    font-size: 20px; 
+    text-transform: uppercase; 
+    margin-left: 5px; 
+    border-radius: 9px; 
+    } 
+    footer{ 
+    padding: 0 0 10px 0; 
+    border-top: 5px solid rgb(175, 172, 172); 
+    text-align: center; 
+    color: rgba(0, 0, 0, 0.5); 
+    font-size: 13px; 
+    }
