@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Discount Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #7b61ff;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #5a47d8;
+            transform: scale(1.1);
+        }
+        .bar {
+            width: 80%;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            margin: 10px 0;
+            position: relative;
+        }
+        .bar-fill {
+            height: 100%;
+            background-color: #7b61ff;
+            border-radius: 5px;
+            width: 0;
+            transition: width 0.5s;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        #thanksMessage {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #7b61ff;
+        }
+        .label {
+            text-align: left;
+            width: 80%;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Product Discount Calculator</h1>
+        <input type="text" id="productDescription" placeholder="Product Description" required>
+        <input type="number" id="listPrice" placeholder="List Price" required>
+        <input type="number" id="discountPercentage" placeholder="Discount Percentage" required>
+        <input type="text" id="discountAmount" placeholder="Discount Amount" readonly>
+        <input type="text" id="discountedPrice" placeholder="Discounted Price" readonly>
+        <button class="button" onclick="calculateDiscount()">Calculate</button>
+        <button class="button" onclick="resetForm()">Reset</button>
+        <div id="result"></div>
+        <p id="thanksMessage">Thanks for using the Product Discount Calculator!</p>
+    </div>
+
+    <script>
+        function calculateDiscount() {
+            var listPrice = parseFloat(document.getElementById('listPrice').value);
+            var discountPercentage = parseFloat(document.getElementById('discountPercentage').value);
+            if (isNaN(listPrice) || isNaN(discountPercentage)) {
+                alert("Please enter valid numbers for list price and discount percentage.");
+                return;
+            }
+            var discountAmount = (listPrice * discountPercentage) / 100;
+            var discountedPrice = listPrice - discountAmount;
+            document.getElementById('discountAmount').value = "Ksh" + discountAmount.toFixed(2);
+            document.getElementById('discountedPrice').value = "Ksh" + discountedPrice.toFixed(2);
+            document.getElementById('thanksMessage').style.display = 'block';
+        }
+
+        function resetForm() {
+            document.getElementById('productDescription').value = "";
+            document.getElementById('listPrice').value = "";
+            document.getElementById('discountPercentage').value = "";
+            document.getElementById('discountAmount').value = "";
+            document.getElementById('discountedPrice').value = "";
+            document.getElementById('thanksMessage').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

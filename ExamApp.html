@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #7b61ff;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #5a47d8;
+            transform: scale(1.1);
+        }
+        #thanksMessage {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #7b61ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exam App</h1>
+        <form id="examForm">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Marks</th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="name1" name="name1" required></td>
+                    <td><input type="number" id="mark1" name="mark1" required></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="name2" name="name2" required></td>
+                    <td><input type="number" id="mark2" name="mark2" required></td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td id="average"></td>
+                </tr>
+            </table>
+            <button type="button" class="button" onclick="calculateAverage()">Calculate</button>
+        </form>
+        <p id="thanksMessage">Thanks for using the Exam App</p>
+    </div>
+
+    <script>
+        function calculateAverage() {
+            var mark1 = parseFloat(document.getElementById('mark1').value);
+            var mark2 = parseFloat(document.getElementById('mark2').value);
+            var average = (mark1 + mark2) / 2;
+            document.getElementById('average').innerText = average;
+            document.getElementById('thanksMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

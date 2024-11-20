@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email List Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #7b61ff;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #5a47d8;
+            transform: scale(1.1);
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        #thanksMessage {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #7b61ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Join Our Email List</h1>
+        <form id="emailForm" onsubmit="return validateForm()">
+            <input type="email" id="email" placeholder="Email Address" required>
+            <div id="emailError" class="error"></div>
+            <input type="email" id="reEmail" placeholder="Re-enter Email Address" required>
+            <div id="reEmailError" class="error"></div>
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <div id="firstNameError" class="error"></div>
+            <button type="submit" class="button">Join our List</button>
+        </form>
+        <p id="thanksMessage">Thanks for using the Exam App!</p>
+    </div>
+
+    <script>
+        function validateForm() {
+            var email = document.getElementById('email').value;
+            var reEmail = document.getElementById('reEmail').value;
+            var firstName = document.getElementById('firstName').value;
+            var valid = true;
+
+            if (email !== reEmail) {
+                document.getElementById('reEmailError').innerText = "This entry must equal first entry";
+                valid = false;
+            } else {
+                document.getElementById('reEmailError').innerText = "";
+            }
+
+            if (firstName.trim() === "") {
+                document.getElementById('firstNameError').innerText = "This field is required";
+                valid = false;
+            } else {
+                document.getElementById('firstNameError').innerText = "";
+            }
+
+            if (valid) {
+                document.getElementById('thanksMessage').style.display = 'block';
+            }
+
+            return valid;
+        }
+    </script>
+</body>
+</html>
