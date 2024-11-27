@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #e0f7fa; 
+        }
+        .container {
+            max-width: 600px;
+            background: linear-gradient(to bottom, rgb(212, 200, 212), white); /* Gradient from purple to white */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            border-radius: 15px; 
+        }
+        .search-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px; 
+            border: 1px solid #ccc;
+        }
+        .search-bar button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px; 
+            border: 1px solid #ccc;
+            background-color: #db1388;
+            color: white;
+            cursor: pointer;
+            
+        }
+        .search-bar button:hover {
+            background-color: #004d40;
+        }
+        .current-weather {
+            display: flex;
+            text-align:left;
+            margin-bottom: 20px;
+            justify-content: space-between;
+        }
+        .visual-output {
+            font-weight: bold; 
+            text-align: right;
+
+            
+        }
+        .weather-info {
+            color: #363535;
+            text-align: left; 
+        }
+        .weekly-forecast {
+            display: flex;
+            justify-content: space-between;
+            color: #db1388;
+        }
+        .day {
+            text-align: center;
+        }
+        .day p {
+            font-weight: bold; 
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to our Weather application</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Enter city name">
+            <button>SEARCH</button>
+        </div>
+        <h2>Paris</h2>
+        <div class="current-weather">
+        
+            <p class="weather-info">
+                Tuesday 14:40, scattered clouds
+            </br>
+            Humidity: 66%, Wind Speed: 4.3
+        </p>
+            <p class="visual-output">
+                12°c
+            </br>
+            ⛅
+        </p>
+        </div>
+        <div class="weekly-forecast">
+            <div class="day">
+                <p>Mon</p>
+                <p>⛅</p>
+                <p>15°c 19'</p>
+            </div>
+            <div class="day">
+                <p>Tue</p>
+                <p>⛅</p>
+                <p>15°c 19'</p>
+            </div>
+            <div class="day">
+                <p>Wed</p>
+                <p>⛅</p>
+                <p>15°c 19'</p>
+            </div>
+            <div class="day">
+                <p>Thu</p>
+                <p>⛅</p>
+                <p>19°c 19'</p>
+            </div>
+            <div class="day">
+                <p>Fri</p>
+                <p>⛅</p>
+                <p>15°c 19'</p>
+            </div>
+            <div class="day">
+                <p>Sat</p>
+                <p>⛅</p>
+                <p>19°c 19'</p>
+            </div>
+            <div class="day">
+                <p>Sun</p>
+                <p>⛅</p>
+                <p>15°c 19'</p>
+            </div>
+        </div>
+        <footer>
+            <p>Coded by Hillary Phans.</p>
+        </footer>
+    </div>
+</body>
+</html>

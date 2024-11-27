@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            height: auto;
+        }
+        .container {
+            background-color: white;
+           
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        label {
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            align-self: auto;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        button {
+            width: 150px;
+            padding: 2.5px;
+            margin: auto;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+        }
+        .register {
+            background-color: #28a745;
+            color: white;
+        }
+        .clear {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Register Account</h2>
+    <form id="registrationForm">
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" required>
+            <span class="error" id="fullNameError"></span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+            <span class="error" id="passwordError"></span>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" required>
+            <span class="error" id="confirmPasswordError"></span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+            <span class="error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" id="phoneNumber" required>
+            <span class="error" id="phoneNumberError"></span>
+        </div>
+        <div class="form-group">
+            <label for="zipCode">Zip Code</label>
+            <input type="number" id="zipCode" required>
+            <span class="error" id="zipCodeError"></span>
+        </div>
+        <div class="form-group">
+            <label for="cardType">Card Type</label>
+            <select id="cardType" required>
+                <option value="">Select Card Type</option>
+                <option value="Visa">Visa</option>
+                <option value="MasterCard">MasterCard</option>
+                <option value="American Express">American Express</option>
+            </select>
+            <span class="error" id="cardTypeError"></span>
+        </div>
+        <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" required>
+            <span class="error" id="cardNumberError"></span>
+        </div>
+        <div class="form-group">
+            <label for="expirationDate">Expiration Date</label>
+            <input type="date" id="expirationDate" required>
+            <span class="error" id="expirationDateError"></span>
+        </div>
+        <button type="button" class="register" onclick="register()">Register</button>
+        <button type="button" class="clear" onclick="clearForm()">Clear</button>
+    </form>
+</div>
+
+<script>
+    function register() {
+        
+        clearErrors();
+
+        
+        let isValid = true;
+
+        
+        const fullName = document.getElementById('fullName').value;
+        if (fullName.trim() === '') {
+            document.getElementById('fullNameError').innerText = 'Full Name is required.';
+            isValid = false;
+        }
+
+
+        const password = document.getElementById('password').value;
+        if (password.length < 6) {
+            document.getElementById('passwordError').innerText = 'Password must be at least 6 characters.';
+            isValid = false;
+        }
+
+
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        if (password !== confirmPassword) {
+            document.getElementById('confirmPasswordError').innerText = 'Passwords do not match.';
+            isValid = false;
+        }
+
+       
+        const email = document.getElementById('email').value;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            document.getElementById('emailError').innerText = 'Invalid email format.';
+            isValid = false;
+        }
+
+        const phoneNumber = document.getElementById('phoneNumber').value;
+        const phonePattern = /^\d{10}$/;
+        if (!phonePattern.test(phoneNumber)) {
+            document.getElementById('phoneNumberError').innerText = 'Invalid phone number format.';
+            isValid = false;
+        }
+
+
+        const zipCode = document.getElementById('zipCode').value;
+        if (zipCode.length < 5) {
+            document.getElementById('zipCodeError').innerText = 'Zip Code must be at least 5 digits.';
+            isValid = false;
+        }
+
+       
+        const cardNumber = document.getElementById('cardNumber').value;
+        const cardNumberPattern = /^\d{16}$/; 
+        if (!cardNumberPattern.test(cardNumber)) {
+            document.getElementById('cardNumberError').innerText = 'Invalid card number format.';
+            isValid = false;
+        }
+
+  
+        if (isValid) {
+            alert('Registration successful!');
+            clearForm();
+        }
+    }
+
+    function clearForm() {
+        document.getElementById('registrationForm').reset();
+        clearErrors();
+    }
+
+    function clearErrors() {
+        const errorElements = document.querySelectorAll('.error');
+        errorElements.forEach(error => error.innerText = '');
+    }
+</script>
+
+</body>
+</html>
